@@ -1,0 +1,18 @@
+apiVersion: trimtab.dev/v1alpha1
+kind: Intent
+metadata:
+  name: outside-grant
+spec:
+  claim: "The autopatch engine names its owners."
+  scope:
+    targets:
+      - github.repo:BitGo/autopatch-engine
+  sense:
+    demonstration:
+      run: "test -s .github/CODEOWNERS"
+  remedy:
+    change:
+      author:
+        agent:
+          template:
+            prompt: prompts/data-format.md
