@@ -1,0 +1,30 @@
+apiVersion: trimtab.dev/v1alpha1
+kind: Intent
+metadata:
+  name: data-format
+spec:
+  claim: "The demo repository documents the format of its transactions file."
+  scope:
+    targets:
+      - github.repo:ericcrosson-bitgo/trimtab-demo
+  sense:
+    demonstration:
+      run: "test -s docs/transactions.md"
+    every: 6h
+    timeout: 5m
+  remedy:
+    change:
+      author:
+        agent:
+          template:
+            prompt: prompts/data-format.md
+        allowedPaths:
+          - docs/**
+      rounds: 2
+      attempts: 1
+      branchPrefix: trimtab/team/
+      timeout: 45m
+      settle: 2h
+  budget:
+    inFlight: 1
+    open: 1
