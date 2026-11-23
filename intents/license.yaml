@@ -3,13 +3,13 @@ kind: Intent
 metadata:
   name: license
 spec:
-  claim: "The demo repository is UNLICENSED."
+  claim: "The demo repository is UNLICENSED and says who owns it."
   scope:
     targets:
       - github.repo:ericcrosson-bitgo/trimtab-demo
   sense:
     demonstration:
-      run: "grep -qx UNLICENSED LICENSE"
+      run: "grep -q ericcrosson-bitgo LICENSE && grep -q UNLICENSED LICENSE"
     every: 6h
     timeout: 5m
   remedy:

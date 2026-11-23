@@ -1,1 +1,1 @@
-Replace the LICENSE file with exactly one line: UNLICENSED. The code is proprietary to ericcrosson-bitgo and carries no license grant.
+Make the LICENSE file exactly two lines. The first line is: UNLICENSED. The second line names the owner: Copyright ericcrosson-bitgo. All rights reserved. The code is proprietary to ericcrosson-bitgo and carries no license grant.
